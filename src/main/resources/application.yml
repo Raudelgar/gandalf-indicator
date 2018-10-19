@@ -1,0 +1,35 @@
+server:
+    contextPath: /gandalf-indicator
+    port: 8088
+tomcat:
+    ajp:
+        port: 9098
+        remoteauthentication: false
+        #........... AJP is disabled in local machine.....#
+        enable: false
+management:
+    security:
+        enable: false
+spring:
+    application:
+        name: gandalf-indicator
+endpoints:
+    enable: true
+    actuator:
+        enable: true
+    info:
+        enable: true
+        id: info
+        sensitive: true
+    logfile:
+        enable: true
+        external-file: logs/gandalf-indicator.log
+        sensitive: true
+info:
+    app:
+        contact:
+            email: raudel24@gmail.com
+            name: 'gandalf-indicator'
+        description: 'gandalf-indicator'
+        name: gandalf-indicator
+        version: '@project.version@'
