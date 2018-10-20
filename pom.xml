@@ -28,6 +28,7 @@
         <v20.version>3.0.24</v20.version>
         <httpclient.version>4.5.2</httpclient.version>
         <json-simple.version>1.1.1</json-simple.version>
+        <gandalf-searcher.version>1.0-SNAPSHOT</gandalf-searcher.version>
     </properties>
 
     <dependencies>
@@ -86,12 +87,27 @@
             <version>${json-simple.version}</version>
             <scope>compile</scope>
         </dependency>
+        <dependency>
+            <groupId>com.garloinvest.searcher</groupId>
+            <artifactId>gandalf-searcher</artifactId>
+            <version>${gandalf-searcher.version}</version>
+        </dependency>
     </dependencies>
     <build>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                 <executions>
+                	<execution>
+                		<goals>
+                			<goal>repackage</goal>
+                		</goals>
+                		<configuration>
+                			<executable>true</executable>
+                		</configuration>
+                	</execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
